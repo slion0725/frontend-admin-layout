@@ -1,0 +1,15 @@
+// 表格
+table.table {
+  thead th {
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+  }
+  tbody {
+    tr td a {
+      color: black;
+    }
+    tr.bg-dark.text-white td a {
+      color: inherit;
+    }
+  }
+}

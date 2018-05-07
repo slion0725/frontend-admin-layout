@@ -1,0 +1,15 @@
+// 分頁
+ul.pagination {
+  > li.page-item {
+    > a.page-link {
+      color: #212529;
+      border: 1px solid #e5e5e5;
+    }
+    &.active {
+      > a.page-link {
+        background-color: #212529;
+        color: white;
+      }
+    }
+  }
+}

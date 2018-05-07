@@ -1,0 +1,81 @@
+body {
+  font-family: "Noto Sans TC", "Microsoft JhengHei";
+  // x-small,xx-small,0.86rem
+  font-size: 0.8rem !important;
+}
+
+a {
+  box-shadow: none !important;
+  color: gray;
+  text-decoration: none !important;
+  &:hover {
+    color: black;
+  }
+  &.disabled {
+    color: #e5e5e5;
+    cursor: not-allowed;
+    text-decoration: none;
+  }
+}
+
+nav.navbar {
+  background-color: white;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-bottom-color: #e5e5e5;
+  height: 46px;
+  max-height: 46px;
+}
+
+// 元件
+@import "_breadcrumb";
+@import "_loading";
+@import "_menu";
+@import "_off-canvas";
+@import "_pagination";
+@import "_table";
+@import "_off-canvas";
+
+// 滑動按鈕
+div.scroll-btn {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  .btn-item {
+    flex: 0 0 auto;
+    &:not(:last-child)::after {
+      content: "|";
+      color: gray;
+      padding: 0 0.5rem;
+    }
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// 下拉
+.dropdown-menu {
+  min-width: 0px;
+  a {
+    font-size: 0.8rem;
+  }
+}
+
+// navtabs滑動
+.nav.nav-tabs.d-flex.flex-nowrap {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// input[type=file]
+.custom-file-label,
+.custom-file-label::after {
+  height: initial;
+}

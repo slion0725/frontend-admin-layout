@@ -1,0 +1,86 @@
+// 滑動
+.off-canvas {
+  // left
+  &.off-canvas-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 200;
+    width: 240px;
+    background-color: white;
+    visibility: hidden;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    &.off-canvas-effect {
+      visibility: visible;
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+    &.off-canvas-open {
+      visibility: visible;
+      -webkit-transform: translate3d(0%, 0, 0);
+      transform: translate3d(0%, 0, 0);
+    }
+  }
+  // right
+  &.off-canvas-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 200;
+    background-color: white;
+    visibility: hidden;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    &.off-canvas-effect {
+      visibility: visible;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+    &.off-canvas-open {
+      visibility: visible;
+      -webkit-transform: translate3d(0%, 0, 0);
+      transform: translate3d(0%, 0, 0);
+    }
+  }
+  // card
+  .card-header,
+  .card-footer {
+    background-color: white;
+  }
+  .card-body {
+    overflow-y: auto;
+  }
+}
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .off-canvas-right {
+    width: 100% !important;
+  }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .off-canvas-right {
+    width: 100% !important;
+  }
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .off-canvas-right {
+    width: 500px !important;
+  }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .off-canvas-right {
+    width: 500px !important;
+  }
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .off-canvas-right {
+    width: 500px !important;
+  }
+}

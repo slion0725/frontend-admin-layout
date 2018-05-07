@@ -1,0 +1,12 @@
+// 載入
+$spinkit-spinner-color: white !default;
+@import "spinkit/scss/spinners/7-three-bounce.scss";
+.loading {
+  background-color: black;
+  opacity: 0.8;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2000;
+}
