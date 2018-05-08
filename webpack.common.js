@@ -15,8 +15,11 @@ module.exports = {
   cache: true,
   entry: {
     index: "./src/js/index",
+    register: "./src/js/register",
+    login: "./src/js/login",
     table: "./src/js/table",
-    singin: "./src/js/singin"
+    password_forgot: "./src/js/password_forgot",
+    passowrd_reset: "./src/js/passowrd_reset"
   },
   module: {
     rules: [
@@ -94,16 +97,31 @@ module.exports = {
       template: "src/html/index.html"
     }),
     new HtmlWebpackPlugin({
+      chunks: ["vendor", "register"],
+      filename: "register.html",
+      template: "src/html/register.html"
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ["vendor", "login"],
+      filename: "login.html",
+      template: "src/html/login.html"
+    }),
+    new HtmlWebpackPlugin({
       chunks: ["vendor", "table"],
       filename: "table.html",
       template: "src/html/table.html"
     }),
     new HtmlWebpackPlugin({
-      chunks: ["vendor", "table"],
-      filename: "singin.html",
-      template: "src/html/singin.html"
+      chunks: ["vendor", "password_forgot"],
+      filename: "password_forgot.html",
+      template: "src/html/password_forgot.html"
     }),
-    new ManifestPlugin(),
+    new HtmlWebpackPlugin({
+      chunks: ["vendor", "passowrd_reset"],
+      filename: "passowrd_reset.html",
+      template: "src/html/passowrd_reset.html"
+    }),
+    new ManifestPlugin()
     // new CopyWebpackPlugin([
     //   {
     //     from: "src/icon/apple-touch-icon.png",
