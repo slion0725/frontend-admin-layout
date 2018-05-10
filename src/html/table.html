@@ -8,24 +8,10 @@
 
 <body>
     <!-- nav -->
-    ${require('./components/navbar.html')}
-    <!-- off-canvas-left -->
-    <div class="off-canvas off-canvas-left off-canvas-effect" id="offcanvas-menu">
-        <div class="card d-flex flex-column h-100">
-            <div class="card-header">
-                Menu
-            </div>
-            <div class="card-body align-self-stretch p-0 menu">
-                ${require('./components/menu.html')}
-            </div>
-            <div class="card-footer text-right">
-                <a class="text-secondary btn-offcanvas-close" href="#">
-                    Close
-                </a>
-            </div>
-        </div>
-    </div>
-    <!-- off-canvas-right -->
+    ${require('./components/nav.html')}
+    <!-- off-canvas-left + menu -->
+    ${require('./components/menu.html')}
+    <!-- off-canvas-right + profile + add + edit -->
     <div>
         <div class="off-canvas off-canvas-right off-canvas-effect" id="offcanvas-profile">
             <div class="card d-flex flex-column h-100">

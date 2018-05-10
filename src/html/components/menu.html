@@ -1,79 +1,88 @@
-<ul class="nav flex-column collapse-parent">
-    <li class="nav-item">
-        <a class="nav-link active" href="#" data-toggle="collapse" data-target=".collapse_1">
-            <i class="mdi mdi-view-dashboard mr-1"></i>Dashboard
-        </a>
-        <div class="collapse layer-color collapse_1 show" data-parent=".collapse-parent">
-            <ul class="nav flex-column">
-                <li>
-                    <a class="nav-link" href="#">
-                        <i class="mdi mdi-weather-cloudy mr-1"></i>weather-cloudy
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-link active" href="#">
-                        <i class="mdi mdi-weather-fog mr-1"></i>weather-fog
-                    </a>
-                </li>
-            </ul>
+<div class="off-canvas off-canvas-left off-canvas-effect" id="offcanvas-menu">
+    <div class="card d-flex flex-column h-100">
+        <div class="card-header">
+            Menu
         </div>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#" data-toggle="collapse" data-target=".collapse_2">
-            <i class="mdi mdi-settings mr-1"></i>Management
-        </a>
-        <div class="collapse layer-color collapse_2" data-parent=".collapse-parent">
-            <ul class="nav flex-column">
-                <li>
-                    <a class="nav-link" href="#">
-                        <i class="mdi mdi-weather-hail mr-1"></i>weather-hail
+        <div class="card-body align-self-stretch p-0 menu">
+            <ul class="nav flex-column collapse-parent">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" data-toggle="collapse" data-target=".collapse_1">
+                        <i class="mdi mdi-view-dashboard mr-1"></i>Dashboard
                     </a>
-                </li>
-                <li>
-                    <a class="nav-link" href="#">
-                        <i class="mdi mdi-weather-lightning mr-1"></i>weather-lightning
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#" data-toggle="collapse" data-target=".collapse_3-1">
-            <i class="mdi mdi-layers mr-1"></i>Layers
-        </a>
-        <div class="collapse layer-color collapse_3-1" data-parent=".collapse-parent">
-            <ul class="nav flex-column">
-                <li>
-                    <a class="nav-link" href="#">
-                        <i class="mdi mdi-layers mr-1"></i>Layers-1
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-link" href="#" data-toggle="collapse" data-target=".collapse_3-2">
-                        <i class="mdi mdi-layers mr-1"></i>Layers-1
-                    </a>
-                    <div class="collapse layer-color collapse_3-2" data-parent=".collapse_3-1">
+                    <div class="collapse layer-color collapse_1 show" data-parent=".collapse-parent">
                         <ul class="nav flex-column">
                             <li>
                                 <a class="nav-link" href="#">
-                                    <i class="mdi mdi-layers mr-1"></i>Layers-2
+                                    <i class="mdi mdi-weather-cloudy mr-1"></i>weather-cloudy
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link" href="#" data-toggle="collapse" data-target=".collapse_3-3">
-                                    <i class="mdi mdi-layers mr-1"></i>Layers-2
+                                <a class="nav-link active" href="#">
+                                    <i class="mdi mdi-weather-fog mr-1"></i>weather-fog
                                 </a>
-                                <div class="collapse layer-color collapse_3-3" data-parent=".collapse_3-2">
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="collapse" data-target=".collapse_2">
+                        <i class="mdi mdi-settings mr-1"></i>Management
+                    </a>
+                    <div class="collapse layer-color collapse_2" data-parent=".collapse-parent">
+                        <ul class="nav flex-column">
+                            <li>
+                                <a class="nav-link" href="#">
+                                    <i class="mdi mdi-weather-hail mr-1"></i>weather-hail
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#">
+                                    <i class="mdi mdi-weather-lightning mr-1"></i>weather-lightning
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="collapse" data-target=".collapse_3-1">
+                        <i class="mdi mdi-layers mr-1"></i>Layers
+                    </a>
+                    <div class="collapse layer-color collapse_3-1" data-parent=".collapse-parent">
+                        <ul class="nav flex-column">
+                            <li>
+                                <a class="nav-link" href="#">
+                                    <i class="mdi mdi-layers mr-1"></i>Layers-1
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#" data-toggle="collapse" data-target=".collapse_3-2">
+                                    <i class="mdi mdi-layers mr-1"></i>Layers-1
+                                </a>
+                                <div class="collapse layer-color collapse_3-2" data-parent=".collapse_3-1">
                                     <ul class="nav flex-column">
                                         <li>
                                             <a class="nav-link" href="#">
-                                                <i class="mdi mdi-layers mr-1"></i>Layers-3
+                                                <i class="mdi mdi-layers mr-1"></i>Layers-2
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="nav-link" href="#">
-                                                <i class="mdi mdi-layers mr-1"></i>Layers-3
+                                            <a class="nav-link" href="#" data-toggle="collapse" data-target=".collapse_3-3">
+                                                <i class="mdi mdi-layers mr-1"></i>Layers-2
                                             </a>
+                                            <div class="collapse layer-color collapse_3-3" data-parent=".collapse_3-2">
+                                                <ul class="nav flex-column">
+                                                    <li>
+                                                        <a class="nav-link" href="#">
+                                                            <i class="mdi mdi-layers mr-1"></i>Layers-3
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nav-link" href="#">
+                                                            <i class="mdi mdi-layers mr-1"></i>Layers-3
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </li>
                                     </ul>
                                 </div>
@@ -83,5 +92,10 @@
                 </li>
             </ul>
         </div>
-    </li>
-</ul>
+        <div class="card-footer text-right">
+            <a class="text-secondary btn-offcanvas-close" href="#">
+                Close
+            </a>
+        </div>
+    </div>
+</div>

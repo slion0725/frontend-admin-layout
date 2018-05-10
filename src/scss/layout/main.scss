@@ -47,7 +47,7 @@ div.scroll-btn {
     flex: 0 0 auto;
     &:not(:last-child)::after {
       content: "|";
-      color: gray;
+      color: gray !important;
       padding: 0 0.5rem;
     }
   }

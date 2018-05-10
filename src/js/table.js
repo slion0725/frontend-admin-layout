@@ -2,17 +2,6 @@ if (process.env.NODE_ENV !== "production") {
   console.log("Looks like we are in development mode!");
 }
 // ----------------------------------------------------------------------------------------------------
-// style
-import "bootstrap/scss/bootstrap.scss";
-import "@mdi/font/scss/materialdesignicons.scss";
-import "datatables.net-bs4/css/dataTables.bootstrap4.css";
-import "datatables.net-colreorder-bs4/css/colReorder.bootstrap4.min.css";
-import "datatables.net-select-bs4/css/select.bootstrap4.min.css";
-import "select2/dist/css/select2.min.css";
-import "select2-bootstrap-theme/dist/select2-bootstrap.min.css";
-import "sweetalert2/dist/sweetalert2.min.css";
-import "flatpickr/dist/flatpickr.min.css";
-// ----------------------------------------------------------------------------------------------------
 // custom style
 import "../scss/table.scss";
 // ----------------------------------------------------------------------------------------------------
@@ -63,7 +52,7 @@ var table = $("table").DataTable({
   },
   colReorder: true,
   scrollX: true,
-  scrollY: "calc(100vh - 280px)",
+  scrollY: "calc(100vh - 300px)",
   scrollCollapse: true,
   order: [[0, "desc"]]
   //   serverSide: true,

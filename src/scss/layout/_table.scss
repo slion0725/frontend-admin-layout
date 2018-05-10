@@ -6,10 +6,10 @@ table.table {
   }
   tbody {
     tr td a {
-      color: black;
+      color: black !important;
     }
     tr.bg-dark.text-white td a {
-      color: inherit;
+      color: inherit !important;
     }
   }
 }
