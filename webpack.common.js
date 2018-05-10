@@ -19,7 +19,7 @@ module.exports = {
     login: "./src/js/login",
     table: "./src/js/table",
     password_forgot: "./src/js/password_forgot",
-    passowrd_reset: "./src/js/passowrd_reset"
+    password_reset: "./src/js/password_reset"
   },
   module: {
     rules: [
@@ -117,9 +117,9 @@ module.exports = {
       template: "src/html/password_forgot.html"
     }),
     new HtmlWebpackPlugin({
-      chunks: ["vendor", "passowrd_reset"],
-      filename: "passowrd_reset.html",
-      template: "src/html/passowrd_reset.html"
+      chunks: ["vendor", "password_reset"],
+      filename: "password_reset.html",
+      template: "src/html/password_reset.html"
     }),
     new ManifestPlugin()
     // new CopyWebpackPlugin([

@@ -7,7 +7,7 @@ import "bootstrap/scss/bootstrap.scss";
 import "@mdi/font/scss/materialdesignicons.scss";
 // ----------------------------------------------------------------------------------------------------
 // custom style
-import "../scss/register.scss";
+import "../scss/password_reset.scss";
 // ----------------------------------------------------------------------------------------------------
 // script
 import $ from "jquery";

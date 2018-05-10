@@ -1,6 +1,7 @@
 if (process.env.NODE_ENV !== "production") {
   console.log("Looks like we are in development mode!");
 }
+// ----------------------------------------------------------------------------------------------------
 // style
 import "bootstrap/scss/bootstrap.scss";
 import "@mdi/font/scss/materialdesignicons.scss";
@@ -11,8 +12,10 @@ import "select2/dist/css/select2.min.css";
 import "select2-bootstrap-theme/dist/select2-bootstrap.min.css";
 import "sweetalert2/dist/sweetalert2.min.css";
 import "flatpickr/dist/flatpickr.min.css";
+// ----------------------------------------------------------------------------------------------------
 // custom style
-import "../scss/layout/main.scss";
+import "../scss/table.scss";
+// ----------------------------------------------------------------------------------------------------
 // script
 import $ from "jquery";
 import "popper.js";
@@ -27,10 +30,9 @@ import zh_TW from "select2/src/js/select2/i18n/zh-TW.js";
 import flatpickr from "flatpickr";
 import { Mandarin } from "flatpickr/dist/l10n/zh.js";
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin.js";
-
 import froala from "froala-editor";
 import "./froalaEditorPluginsImport.js";
-
+// ----------------------------------------------------------------------------------------------------
 $.fn.dataTableExt.oStdClasses.sWrapper = "dataTables_wrapper dt-bootstrap4";
 $.fn.dataTableExt.oStdClasses.sPageButton = "page-item";
 

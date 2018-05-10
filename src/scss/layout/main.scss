@@ -1,20 +1,20 @@
 body {
-  font-family: "Noto Sans TC", "Microsoft JhengHei";
+  font-family: "Noto Sans TC", "Microsoft JhengHei" !important;
   // x-small,xx-small,0.86rem
   font-size: 0.8rem !important;
 }
 
 a {
   box-shadow: none !important;
-  color: gray;
+  color: gray !important;
   text-decoration: none !important;
   &:hover {
-    color: black;
+    color: black !important;
   }
   &.disabled {
-    color: #e5e5e5;
-    cursor: not-allowed;
-    text-decoration: none;
+    color: #e5e5e5 !important;
+    cursor: not-allowed !important;
+    text-decoration: none !important;
   }
 }
 
