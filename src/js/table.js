@@ -20,7 +20,10 @@ import flatpickr from "flatpickr";
 import { Mandarin } from "flatpickr/dist/l10n/zh.js";
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin.js";
 import froala from "froala-editor";
-import "./froalaEditorPluginsImport.js";
+import "./plugins/froala-editor.js";
+import ckeditor5 from "@ckeditor/ckeditor5-build-classic";
+import "codemirror";
+import "summernote/dist/summernote-bs4.min.js";
 // ----------------------------------------------------------------------------------------------------
 $.fn.dataTableExt.oStdClasses.sWrapper = "dataTables_wrapper dt-bootstrap4";
 $.fn.dataTableExt.oStdClasses.sPageButton = "page-item";
@@ -161,16 +164,25 @@ $("#add-tags, #edit-tags").select2({
   containerCssClass: ":all:"
 });
 
-$("#edit-content").froalaEditor({
+$("#edit-froalaeditor").froalaEditor({
   language: "zh_tw",
   fileUploadURL: "/file/upload",
   imageUploadURL: "/image/upload",
   imageManagerLoadURL: "/image/list",
   toolbarBottom: true,
-  zIndex:3000,
-  iconsTemplate: 'font_awesome_5'
+  zIndex: 3000,
+  iconsTemplate: "font_awesome_5"
 });
 
-// 'vue', 'vee-validate', 'vee-validate/dist/locale/zh_TW',
-// 'urijs',
-// 'holderjs',
+ckeditor5
+  .create(document.querySelector("#edit-ckeditor5"), {})
+  .then(editor => {
+    // console.log("Editor was initialized", editor);
+  })
+  .catch(err => {
+    // console.error(err.stack);
+  });
+
+$("#edit-summernote").summernote({
+  dialogsInBody:true
+});
