@@ -18,8 +18,8 @@ module.exports = {
     register: "./src/js/register",
     login: "./src/js/login",
     table: "./src/js/table",
-    password_forgot: "./src/js/password_forgot",
-    password_reset: "./src/js/password_reset"
+    password_reset: "./src/js/password_reset",
+    password_sendlink: "./src/js/password_sendlink"
   },
   module: {
     rules: [
@@ -112,14 +112,14 @@ module.exports = {
       template: "src/html/table.html"
     }),
     new HtmlWebpackPlugin({
-      chunks: ["vendor", "password_forgot"],
-      filename: "password_forgot.html",
-      template: "src/html/password_forgot.html"
-    }),
-    new HtmlWebpackPlugin({
       chunks: ["vendor", "password_reset"],
       filename: "password_reset.html",
       template: "src/html/password_reset.html"
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ["vendor", "password_sendlink"],
+      filename: "password_sendlink.html",
+      template: "src/html/password_sendlink.html"
     }),
     new ManifestPlugin()
     // new CopyWebpackPlugin([

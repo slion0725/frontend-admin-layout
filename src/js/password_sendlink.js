@@ -3,7 +3,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 // ----------------------------------------------------------------------------------------------------
 // style
-import "../scss/password_forgot.scss";
+import "../scss/password_sendlink.scss";
 // ----------------------------------------------------------------------------------------------------
 // script
 import $ from "jquery";
