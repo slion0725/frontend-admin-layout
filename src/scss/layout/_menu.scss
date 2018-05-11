@@ -15,6 +15,7 @@ div.menu {
     &.active {
       font-weight: bold;
       color: black !important;
+      background-color: rgba(0, 0, 0, 0.03);
     }
   }
   .layer-color {
