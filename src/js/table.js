@@ -206,14 +206,32 @@ let edit_croppie = new Croppie(
 );
 
 $("#edit-croppie").on("change", function(event) {
+
+  if(event.target.files.length == 0){
+    return;
+  }
+
   let files = event.target.files;
 
   let reader = new FileReader();
 
   reader.onload = function(ev) {
+
+    // if(!files[0].type.match('image.*')){
+    //   return;
+    // }
+
     edit_croppie.bind({
       url: ev.target.result
     });
+
+    $("#edit-croppie-display")
+    .parent(".col-sm-12")
+    .removeClass("d-none");
+
+    $("#edit-croppie-view")
+    .parent(".col-sm-12")
+    .addClass("d-none");
   };
 
   reader.readAsDataURL(files[0]);
@@ -224,11 +242,17 @@ $("#edit-croppie-clip").on("click", function() {
     let reader = new FileReader();
 
     reader.onload = function(ev) {
-      swal({
-        imageUrl: ev.target.result
-      });
+      $("#edit-croppie-view").prop("src", ev.target.result);
     };
 
     reader.readAsDataURL(blob);
+
+    $("#edit-croppie-display")
+      .parent(".col-sm-12")
+      .addClass("d-none");
+
+    $("#edit-croppie-view")
+      .parent(".col-sm-12")
+      .removeClass("d-none");
   });
 });
