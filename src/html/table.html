@@ -455,26 +455,26 @@
                     <nav>
                         <div class="nav nav-tabs d-flex flex-nowrap">
                             <!-- tabs -->
-                            <a class="nav-item nav-link active" href="#navtab-tab1" data-toggle="tab">Tab1</a>
-                            <a class="nav-item nav-link" href="#navtab-tab2" data-toggle="tab">Tab2</a>
-                            <a class="nav-item nav-link" href="#navtab-tab3" data-toggle="tab">Tab3</a>
-                            <a class="nav-item nav-link" href="#navtab-tab4" data-toggle="tab">Tab4</a>
-                            <a class="nav-item nav-link" href="#navtab-tab5" data-toggle="tab">Tab5</a>
-                            <a class="nav-item nav-link" href="#navtab-tab6" data-toggle="tab">Tab6</a>
-                            <a class="nav-item nav-link" href="#navtab-tab7" data-toggle="tab">Tab7</a>
-                            <a class="nav-item nav-link" href="#navtab-tab8" data-toggle="tab">Tab8</a>
-                            <a class="nav-item nav-link" href="#navtab-tab9" data-toggle="tab">Tab9</a>
-                            <a class="nav-item nav-link" href="#navtab-tab10" data-toggle="tab">Tab10</a>
-                            <a class="nav-item nav-link" href="#navtab-tab11" data-toggle="tab">Tab11</a>
-                            <a class="nav-item nav-link" href="#navtab-tab12" data-toggle="tab">Tab12</a>
-                            <a class="nav-item nav-link" href="#navtab-tab13" data-toggle="tab">Tab13</a>
-                            <a class="nav-item nav-link" href="#navtab-tab14" data-toggle="tab">Tab14</a>
-                            <a class="nav-item nav-link" href="#navtab-tab15" data-toggle="tab">Tab15</a>
-                            <a class="nav-item nav-link" href="#navtab-tab16" data-toggle="tab">Tab16</a>
-                            <a class="nav-item nav-link" href="#navtab-tab17" data-toggle="tab">Tab17</a>
-                            <a class="nav-item nav-link" href="#navtab-tab18" data-toggle="tab">Tab18</a>
-                            <a class="nav-item nav-link" href="#navtab-tab19" data-toggle="tab">Tab19</a>
-                            <a class="nav-item nav-link" href="#navtab-tab20" data-toggle="tab">Tab20</a>
+                            <a class="nav-item nav-link text-nowrap active" href="#navtab-tab1" data-toggle="tab">Form</a>
+                            <a class="nav-item nav-link text-nowrap" href="#navtab-tab2" data-toggle="tab">Froala Editor</a>
+                            <a class="nav-item nav-link text-nowrap" href="#navtab-tab3" data-toggle="tab">Ckeditor5</a>
+                            <a class="nav-item nav-link text-nowrap" href="#navtab-tab4" data-toggle="tab">Summernote</a>
+                            <a class="nav-item nav-link text-nowrap" href="#navtab-tab5" data-toggle="tab">Croppie</a>
+                            <a class="nav-item nav-link text-nowrap" href="#navtab-tab6" data-toggle="tab">Tab6</a>
+                            <a class="nav-item nav-link text-nowrap" href="#navtab-tab7" data-toggle="tab">Tab7</a>
+                            <a class="nav-item nav-link text-nowrap" href="#navtab-tab8" data-toggle="tab">Tab8</a>
+                            <a class="nav-item nav-link text-nowrap" href="#navtab-tab9" data-toggle="tab">Tab9</a>
+                            <a class="nav-item nav-link text-nowrap" href="#navtab-tab10" data-toggle="tab">Tab10</a>
+                            <a class="nav-item nav-link text-nowrap" href="#navtab-tab11" data-toggle="tab">Tab11</a>
+                            <a class="nav-item nav-link text-nowrap" href="#navtab-tab12" data-toggle="tab">Tab12</a>
+                            <a class="nav-item nav-link text-nowrap" href="#navtab-tab13" data-toggle="tab">Tab13</a>
+                            <a class="nav-item nav-link text-nowrap" href="#navtab-tab14" data-toggle="tab">Tab14</a>
+                            <a class="nav-item nav-link text-nowrap" href="#navtab-tab15" data-toggle="tab">Tab15</a>
+                            <a class="nav-item nav-link text-nowrap" href="#navtab-tab16" data-toggle="tab">Tab16</a>
+                            <a class="nav-item nav-link text-nowrap" href="#navtab-tab17" data-toggle="tab">Tab17</a>
+                            <a class="nav-item nav-link text-nowrap" href="#navtab-tab18" data-toggle="tab">Tab18</a>
+                            <a class="nav-item nav-link text-nowrap" href="#navtab-tab19" data-toggle="tab">Tab19</a>
+                            <a class="nav-item nav-link text-nowrap" href="#navtab-tab20" data-toggle="tab">Tab20</a>
                         </div>
                     </nav>
                     <div class="tab-content">
@@ -696,7 +696,24 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane pt-2" id="navtab-tab5">Tab-5</div>
+                        <div class="tab-pane pt-2" id="navtab-tab5">
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label for="edit-croppie" class="col-form-label col-form-label-sm">Croppie</label>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="input-group input-group-sm">
+                                        <input type="file" class="form-control" id="edit-croppie" accept="image/*">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" id="edit-croppie-clip">Clip</button>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2">
+                                        <div id="edit-croppie-display"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="tab-pane pt-2" id="navtab-tab6">Tab-6</div>
                         <div class="tab-pane pt-2" id="navtab-tab7">Tab-7</div>
                         <div class="tab-pane pt-2" id="navtab-tab8">Tab-8</div>

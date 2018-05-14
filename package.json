@@ -49,6 +49,7 @@
     "@mdi/font": "^2.3.54",
     "bootstrap": "^4.1.1",
     "codemirror": "^5.37.0",
+    "croppie": "^2.6.2",
     "datatables.net": "^1.10.16",
     "datatables.net-bs4": "^1.10.16",
     "datatables.net-colreorder": "^1.4.1",

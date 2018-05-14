@@ -22,6 +22,8 @@ import "../plugins/froala-editor.js";
 import ckeditor5 from "@ckeditor/ckeditor5-build-classic";
 import "codemirror";
 import "summernote/dist/summernote-bs4.min.js";
+import "croppie/croppie.js";
+import swal from "sweetalert2";
 /**
  * script
  */
@@ -185,4 +187,48 @@ ckeditor5
 
 $("#edit-summernote").summernote({
   dialogsInBody: true
+});
+
+let edit_croppie = new Croppie(
+  document.getElementById("edit-croppie-display"),
+  {
+    enableExif: true,
+    viewport: {
+      width: 300,
+      height: 200,
+      type: "square"
+    },
+    boundary: {
+      width: 400,
+      height: 400
+    }
+  }
+);
+
+$("#edit-croppie").on("change", function(event) {
+  let files = event.target.files;
+
+  let reader = new FileReader();
+
+  reader.onload = function(ev) {
+    edit_croppie.bind({
+      url: ev.target.result
+    });
+  };
+
+  reader.readAsDataURL(files[0]);
+});
+
+$("#edit-croppie-clip").on("click", function() {
+  edit_croppie.result("blob").then(function(blob) {
+    let reader = new FileReader();
+
+    reader.onload = function(ev) {
+      swal({
+        imageUrl: ev.target.result
+      });
+    };
+
+    reader.readAsDataURL(blob);
+  });
 });
