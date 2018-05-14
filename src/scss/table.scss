@@ -1,18 +1,10 @@
-// style
-$custom-file-text: (zh-TW: "選擇檔案");
-@import "~bootstrap/scss/bootstrap.scss";
+@import "../plugins/bootstrap.scss";
+@import "../plugins/fortawesome.scss";
 @import "~@mdi/font/scss/materialdesignicons.scss";
-@import "~@fortawesome/fontawesome-free-webfonts/scss/fa-brands.scss";
-@import "~@fortawesome/fontawesome-free-webfonts/scss/fa-regular.scss";
-@import "~@fortawesome/fontawesome-free-webfonts/scss/fa-solid.scss";
-@import "~@fortawesome/fontawesome-free-webfonts/scss/fontawesome.scss";
-@import "~datatables.net-bs4/css/dataTables.bootstrap4.css";
-@import "~datatables.net-colreorder-bs4/css/colReorder.bootstrap4.min.css";
-@import "~datatables.net-select-bs4/css/select.bootstrap4.min.css";
-@import "~select2/dist/css/select2.min.css";
-@import "~select2-bootstrap-theme/dist/select2-bootstrap.min.css";
+@import "../plugins/datatables.scss";
+@import "../plugins/select2.scss";
 @import "~sweetalert2/dist/sweetalert2.min.css";
 @import "~flatpickr/dist/flatpickr.min.css";
 @import "~summernote/dist/summernote-bs4.css";
-// ----------------------------------------------------------------------------------------------------
+@import "../plugins/froala-editor.scss";
 @import "./layout/main.scss";

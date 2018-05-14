@@ -1,23 +1,3 @@
-// CSS
-import "froala-editor/css/froala_editor.min.css";
-import "froala-editor/css/froala_style.min.css";
-// CSS plugins
-import "froala-editor/css/plugins/char_counter.min.css";
-import "froala-editor/css/plugins/code_view.min.css";
-import "froala-editor/css/plugins/colors.min.css";
-import "froala-editor/css/plugins/draggable.min.css";
-import "froala-editor/css/plugins/emoticons.min.css";
-import "froala-editor/css/plugins/file.min.css";
-import "froala-editor/css/plugins/fullscreen.min.css";
-import "froala-editor/css/plugins/help.min.css";
-import "froala-editor/css/plugins/image.min.css";
-import "froala-editor/css/plugins/image_manager.min.css";
-import "froala-editor/css/plugins/line_breaker.min.css";
-import "froala-editor/css/plugins/quick_insert.min.css";
-import "froala-editor/css/plugins/special_characters.min.css";
-import "froala-editor/css/plugins/table.min.css";
-import "froala-editor/css/plugins/video.min.css";
-// JS plugins
 import "froala-editor/js/plugins/align.min";
 import "froala-editor/js/plugins/char_counter.min";
 import "froala-editor/js/plugins/code_beautifier.min";
@@ -49,5 +29,4 @@ import "froala-editor/js/plugins/table.min";
 import "froala-editor/js/plugins/url.min";
 import "froala-editor/js/plugins/video.min";
 import "froala-editor/js/plugins/word_paste.min";
-// languages
 import "froala-editor/js/languages/zh_tw"

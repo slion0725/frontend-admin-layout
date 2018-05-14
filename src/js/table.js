@@ -1,30 +1,30 @@
 if (process.env.NODE_ENV !== "production") {
   console.log("Looks like we are in development mode!");
 }
-// ----------------------------------------------------------------------------------------------------
-// custom style
+/**
+ * style
+ */
 import "../scss/table.scss";
-// ----------------------------------------------------------------------------------------------------
-// script
+/**
+ * plugin
+ */
 import $ from "jquery";
 import "popper.js";
 import "bootstrap";
 import "jquery-mousewheel";
-import "datatables.net";
-import "datatables.net-bs4";
-import "datatables.net-colreorder";
-import "datatables.net-select";
-import select2 from "select2/dist/js/select2.full.min.js";
-import zh_TW from "select2/src/js/select2/i18n/zh-TW.js";
+import "../plugins/datatables.js";
+import { select2, select2_lang } from "../plugins/select2.js";
 import flatpickr from "flatpickr";
 import { Mandarin } from "flatpickr/dist/l10n/zh.js";
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin.js";
 import froala from "froala-editor";
-import "./plugins/froala-editor.js";
+import "../plugins/froala-editor.js";
 import ckeditor5 from "@ckeditor/ckeditor5-build-classic";
 import "codemirror";
 import "summernote/dist/summernote-bs4.min.js";
-// ----------------------------------------------------------------------------------------------------
+/**
+ * script
+ */
 $.fn.dataTableExt.oStdClasses.sWrapper = "dataTables_wrapper dt-bootstrap4";
 $.fn.dataTableExt.oStdClasses.sPageButton = "page-item";
 
@@ -156,7 +156,7 @@ $("#add-birthday, #edit-birthday").css({ backgroundColor: "#fff" });
 
 // select2
 $("#add-tags, #edit-tags").select2({
-  language: zh_TW,
+  language: select2_lang,
   theme: "bootstrap",
   width: "100%",
   placeholder: "Selecte",
@@ -184,5 +184,5 @@ ckeditor5
   });
 
 $("#edit-summernote").summernote({
-  dialogsInBody:true
+  dialogsInBody: true
 });

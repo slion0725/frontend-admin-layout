@@ -1,12 +1,16 @@
 if (process.env.NODE_ENV !== "production") {
   console.log("Looks like we are in development mode!");
 }
-// ----------------------------------------------------------------------------------------------------
-// style
+/**
+ * style
+ */
 import "../scss/password_reset.scss";
-// ----------------------------------------------------------------------------------------------------
-// script
+/**
+ * plugin
+ */
 import $ from "jquery";
 import "popper.js";
 import "bootstrap";
-// ----------------------------------------------------------------------------------------------------
+/**
+ * script
+ */
