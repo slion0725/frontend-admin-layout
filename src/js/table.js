@@ -111,7 +111,19 @@ $("#offcanvas-edit-btn").on("click", function() {
 
 $("#del-btn").on("click", function() {
   closeAllOffcanvas();
-  swal("The Internet?", "That thing is still around?", "warning");
+  swal({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    type: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!"
+  }).then(result => {
+    if (result.value) {
+      swal("Deleted!", "Your file has been deleted.", "success");
+    }
+  });
 });
 
 $(".btn-offcanvas-close").on("click", function() {
@@ -206,8 +218,7 @@ let edit_croppie = new Croppie(
 );
 
 $("#edit-croppie").on("change", function(event) {
-
-  if(event.target.files.length == 0){
+  if (event.target.files.length == 0) {
     return;
   }
 
@@ -216,7 +227,6 @@ $("#edit-croppie").on("change", function(event) {
   let reader = new FileReader();
 
   reader.onload = function(ev) {
-
     // if(!files[0].type.match('image.*')){
     //   return;
     // }
@@ -226,12 +236,12 @@ $("#edit-croppie").on("change", function(event) {
     });
 
     $("#edit-croppie-display")
-    .parent(".col-sm-12")
-    .removeClass("d-none");
+      .parent(".col-sm-12")
+      .removeClass("d-none");
 
     $("#edit-croppie-view")
-    .parent(".col-sm-12")
-    .addClass("d-none");
+      .parent(".col-sm-12")
+      .addClass("d-none");
   };
 
   reader.readAsDataURL(files[0]);
