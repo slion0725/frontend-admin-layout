@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^10.0.0",
+    "@fancyapps/fancybox": "^3.3.5",
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
     "@mdi/font": "^2.3.54",
     "bootstrap": "^4.1.1",

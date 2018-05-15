@@ -24,7 +24,8 @@ import "codemirror";
 import "summernote/dist/summernote-bs4.min.js";
 import "croppie/croppie.js";
 import swal from "sweetalert2";
-import 'holderjs'
+import "holderjs";
+import "@fancyapps/fancybox";
 /**
  * script
  */
@@ -268,4 +269,8 @@ $("#edit-croppie-clip").on("click", function() {
   });
 });
 
-$('#edit-croppie-display').find('img').attr('data-src','holder.js/400x400')
+$('[data-fancybox="gallery"]').fancybox({
+  thumbs: {
+    autoStart: true
+  }
+});
