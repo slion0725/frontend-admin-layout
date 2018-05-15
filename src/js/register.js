@@ -11,6 +11,24 @@ import "../scss/register.scss";
 import $ from "jquery";
 import "popper.js";
 import "bootstrap";
+import { Vue } from "../plugins/vue";
 /**
  * script
  */
+
+new Vue({
+  el: "#app",
+  data: {
+    form: {}
+  },
+  methods: {
+    onSubmit() {
+      this.$validator.validate().then(result => {
+        if (!result) {
+          return;
+        }
+        this.$refs.register.submit();
+      });
+    }
+  }
+});

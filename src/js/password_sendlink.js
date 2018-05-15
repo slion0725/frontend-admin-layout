@@ -11,6 +11,24 @@ import "../scss/password_sendlink.scss";
 import $ from "jquery";
 import "popper.js";
 import "bootstrap";
+import { Vue } from "../plugins/vue";
 /**
  * script
  */
+
+new Vue({
+  el: "#app",
+  data: {
+    form: {}
+  },
+  methods: {
+    onSubmit() {
+      this.$validator.validate().then(result => {
+        if (!result) {
+          return;
+        }
+        this.$refs.password_sendlink.submit();
+      });
+    }
+  }
+});

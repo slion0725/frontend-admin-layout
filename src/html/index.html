@@ -7,16 +7,18 @@
 </head>
 
 <body>
-    <!-- nav -->
-    ${require('./components/nav.html')}
-    <!-- container -->
-    <div class="container">
-        <h3 class="text-center mt-5 font-weight-normal">Welcome CMS</h3>
+    <div id="app">
+        <!-- nav -->
+        ${require('./components/nav.html')}
+        <!-- container -->
+        <div class="container">
+            <h3 class="text-center mt-5 font-weight-normal">Welcome CMS</h3>
+        </div>
+        <!-- loading -->
+        ${require('./components/loading.html')}
+        <!-- footer -->
+        ${require('./components/footer.html')}
     </div>
-    <!-- loading -->
-    ${require('./components/loading.html')}
-    <!-- footer -->
-    ${require('./components/footer.html')}
     <!-- script -->
 </body>
 

@@ -24,6 +24,7 @@ import "codemirror";
 import "summernote/dist/summernote-bs4.min.js";
 import "croppie/croppie.js";
 import swal from "sweetalert2";
+import 'holderjs'
 /**
  * script
  */
@@ -266,3 +267,5 @@ $("#edit-croppie-clip").on("click", function() {
       .removeClass("d-none");
   });
 });
+
+$('#edit-croppie-display').find('img').attr('data-src','holder.js/400x400')

@@ -7,51 +7,53 @@
 </head>
 
 <body>
-    <!-- nav -->
-    ${require('./components/nav.html')}
-    <!-- content -->
-    <div class="d-flex justify-content-center">
-        <div style="max-width: 327px;width: 327px;" class="m-4">
-            <form>
-                <div class="text-center mb-4">
-                    <h3 class="h3 mb-3 font-weight-normal">Register</h3>
-                </div>
-                <div class="form-group">
-                    <label for="name" class="col-form-label col-form-label-sm">Name</label>
-                    <input type="name" class="form-control form-control-sm" id="name" placeholder="">
-                    <div class="invalid-feedback">
-                        error
+    <div id="app">
+        <!-- nav -->
+        ${require('./components/nav.html')}
+        <!-- content -->
+        <div class="d-flex justify-content-center">
+            <div style="max-width: 327px;width: 327px;" class="m-4">
+                <form action="register" autocomplete="off" method="POST" novalidate ref="register" @submit.prevent="onSubmit">
+                    <div class="text-center mb-4">
+                        <h3 class="h3 mb-3 font-weight-normal">Register</h3>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="email" class="col-form-label col-form-label-sm">Email</label>
-                    <input type="email" class="form-control form-control-sm" id="email" placeholder="">
-                    <div class="invalid-feedback">
-                        error
+                    <div class="form-group">
+                        <label for="name" class="col-form-label col-form-label-sm">Name</label>
+                        <input type="name" class="form-control form-control-sm" id="name" placeholder="">
+                        <div class="invalid-feedback">
+                            error
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="password" class="col-form-label col-form-label-sm">Password</label>
-                    <input type="password" class="form-control form-control-sm" id="password" placeholder="">
-                    <div class="invalid-feedback">
-                        error
+                    <div class="form-group">
+                        <label for="email" class="col-form-label col-form-label-sm">Email</label>
+                        <input type="email" class="form-control form-control-sm" id="email" placeholder="">
+                        <div class="invalid-feedback">
+                            error
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="password_confirmation" class="col-form-label col-form-label-sm">Confirm Password</label>
-                    <input type="password" class="form-control form-control-sm" id="password_confirmation" name="password_confirmation" placeholder="">
-                    <div class="invalid-feedback">
-                        error
+                    <div class="form-group">
+                        <label for="password" class="col-form-label col-form-label-sm">Password</label>
+                        <input type="password" class="form-control form-control-sm" id="password" placeholder="">
+                        <div class="invalid-feedback">
+                            error
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-sm btn-primary btn-block" type="submit">Register</button>
-                </div>
-            </form>
+                    <div class="form-group">
+                        <label for="password_confirmation" class="col-form-label col-form-label-sm">Confirm Password</label>
+                        <input type="password" class="form-control form-control-sm" id="password_confirmation" name="password_confirmation" placeholder="">
+                        <div class="invalid-feedback">
+                            error
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-sm btn-primary btn-block" type="submit">Register</button>
+                    </div>
+                </form>
+            </div>
         </div>
+        <!-- footer -->
+        ${require('./components/footer.html')}
     </div>
-    <!-- footer -->
-    ${require('./components/footer.html')}
     <!-- script -->
 </body>
 

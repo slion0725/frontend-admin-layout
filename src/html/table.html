@@ -7,75 +7,77 @@
 </head>
 
 <body>
-    <!-- nav -->
-    ${require('./components/nav.html')}
-    <!-- off-canvas-left + menu -->
-    ${require('./components/menu.html')}
-    <!-- off-canvas-right + profile + search + show + add + edit -->
-    <div>
-        <!-- profile -->
-        ${require('./components/profile.html')}
-        <!-- search -->
-        ${require('./components/search.html')}
-        <!-- show -->
-        ${require('./components/show.html')}
-        <!-- add -->
-        ${require('./components/add.html')}
-        <!-- edit -->
-        ${require('./components/edit.html')}
-    </div>
-    <!-- container -->
-    <div class="container-fluid">
-        <!-- breadcrumb -->
-        ${require('./components/breadcrumb.html')}
-        <!-- button -->
-        <div class="scroll-btn">
-            <div class="btn-item">
-                <a href="#" data-toggle="dropdown">
-                    <i class="mdi mdi-format-line-spacing mr-1"></i>10
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">10</a>
-                    <a class="dropdown-item" href="#">25</a>
-                    <a class="dropdown-item" href="#">50</a>
-                    <a class="dropdown-item" href="#">100</a>
-                </div>
-            </div>
-            <a href="#" class="btn-item">
-                <i class="mdi mdi-minus-box-outline mr-1"></i>Select
-            </a>
-            <a href="#" class="btn-item">
-                <i class="mdi mdi-checkbox-blank-outline mr-1"></i>Select
-            </a>
-            <a href="#" class="btn-item">
-                <i class="mdi mdi-checkbox-marked-outline mr-1"></i>Select
-            </a>
-            <a href="#" class="btn-item" id="offcanvas-search-btn">
-                <i class="mdi mdi-magnify mr-1"></i>Search
-            </a>
-            <a href="#" class="btn-item" id="offcanvas-show-btn">
-                <i class="mdi mdi-view-list mr-1"></i>Show
-            </a>
-            <a href="#" class="btn-item" id="offcanvas-add-btn">
-                <i class="mdi mdi-plus mr-1"></i>Add
-            </a>
-            <a href="#" class="btn-item" id="offcanvas-edit-btn">
-                <i class="mdi mdi-pencil mr-1"></i>Edit
-            </a>
-            <a href="#" class="btn-item" id="del-btn">
-                <i class="mdi mdi-delete mr-1"></i>Del
-            </a>
-            <a href="#" class="btn-item" id="del-btn">
-                <i class="mdi mdi-download mr-1"></i>Download
-            </a>
+    <div id="app">
+        <!-- nav -->
+        ${require('./components/nav.html')}
+        <!-- off-canvas-left + menu -->
+        ${require('./components/menu.html')}
+        <!-- off-canvas-right + profile + search + show + add + edit -->
+        <div>
+            <!-- profile -->
+            ${require('./components/profile.html')}
+            <!-- search -->
+            ${require('./components/search.html')}
+            <!-- show -->
+            ${require('./components/show.html')}
+            <!-- add -->
+            ${require('./components/add.html')}
+            <!-- edit -->
+            ${require('./components/edit.html')}
         </div>
-        <!-- table -->
-        ${require('./components/table.html')}
+        <!-- container -->
+        <div class="container-fluid">
+            <!-- breadcrumb -->
+            ${require('./components/breadcrumb.html')}
+            <!-- button -->
+            <div class="scroll-btn">
+                <div class="btn-item">
+                    <a href="#" data-toggle="dropdown">
+                        <i class="mdi mdi-format-line-spacing mr-1"></i>10
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">10</a>
+                        <a class="dropdown-item" href="#">25</a>
+                        <a class="dropdown-item" href="#">50</a>
+                        <a class="dropdown-item" href="#">100</a>
+                    </div>
+                </div>
+                <a href="#" class="btn-item">
+                    <i class="mdi mdi-minus-box-outline mr-1"></i>Select
+                </a>
+                <a href="#" class="btn-item">
+                    <i class="mdi mdi-checkbox-blank-outline mr-1"></i>Select
+                </a>
+                <a href="#" class="btn-item">
+                    <i class="mdi mdi-checkbox-marked-outline mr-1"></i>Select
+                </a>
+                <a href="#" class="btn-item" id="offcanvas-search-btn">
+                    <i class="mdi mdi-magnify mr-1"></i>Search
+                </a>
+                <a href="#" class="btn-item" id="offcanvas-show-btn">
+                    <i class="mdi mdi-view-list mr-1"></i>Show
+                </a>
+                <a href="#" class="btn-item" id="offcanvas-add-btn">
+                    <i class="mdi mdi-plus mr-1"></i>Add
+                </a>
+                <a href="#" class="btn-item" id="offcanvas-edit-btn">
+                    <i class="mdi mdi-pencil mr-1"></i>Edit
+                </a>
+                <a href="#" class="btn-item" id="del-btn">
+                    <i class="mdi mdi-delete mr-1"></i>Del
+                </a>
+                <a href="#" class="btn-item" id="del-btn">
+                    <i class="mdi mdi-download mr-1"></i>Download
+                </a>
+            </div>
+            <!-- table -->
+            ${require('./components/table.html')}
+        </div>
+        <!-- loading -->
+        ${require('./components/loading.html')}
+        <!-- footer -->
+        ${require('./components/footer.html')}
     </div>
-    <!-- loading -->
-    ${require('./components/loading.html')}
-    <!-- footer -->
-    ${require('./components/footer.html')}
     <!-- script -->
 </body>
 
