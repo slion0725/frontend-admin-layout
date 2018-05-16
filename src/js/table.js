@@ -251,6 +251,10 @@ $("#edit-croppie").on("change", function(event) {
 
 $("#edit-croppie-clip").on("click", function() {
   edit_croppie.result("blob").then(function(blob) {
+    if (!blob) {
+      return;
+    }
+
     let reader = new FileReader();
 
     reader.onload = function(ev) {
