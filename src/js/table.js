@@ -26,6 +26,8 @@ import "croppie/croppie.js";
 import swal from "sweetalert2";
 import "holderjs";
 import "@fancyapps/fancybox";
+import tinymce from "tinymce/tinymce";
+import "tinymce/themes/modern/theme";
 /**
  * script
  */
@@ -277,4 +279,9 @@ $('[data-fancybox="gallery"]').fancybox({
   thumbs: {
     autoStart: true
   }
+});
+
+tinymce.init({
+  selector: "#edit-tinymce",
+  skin: false
 });
