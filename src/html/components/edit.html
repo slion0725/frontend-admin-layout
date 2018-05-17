@@ -13,7 +13,7 @@
                     <a class="nav-item nav-link text-nowrap" href="#navtab-tab4" data-toggle="tab">Summernote</a>
                     <a class="nav-item nav-link text-nowrap" href="#navtab-tab5" data-toggle="tab">Croppie</a>
                     <a class="nav-item nav-link text-nowrap" href="#navtab-tab6" data-toggle="tab">Fancybox</a>
-                    <a class="nav-item nav-link text-nowrap" href="#navtab-tab7" data-toggle="tab">Tab7</a>
+                    <a class="nav-item nav-link text-nowrap" href="#navtab-tab7" data-toggle="tab">Filepond</a>
                     <a class="nav-item nav-link text-nowrap" href="#navtab-tab8" data-toggle="tab">Tinymce</a>
                     <a class="nav-item nav-link text-nowrap" href="#navtab-tab9" data-toggle="tab">Tab9</a>
                     <a class="nav-item nav-link text-nowrap" href="#navtab-tab10" data-toggle="tab">Tab10</a>
@@ -264,10 +264,10 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-12 d-none">
-                            <div id="edit-croppie-display"></div>
+                            <div id="edit-croppie-preview"></div>
                         </div>
                         <div class="col-sm-12 d-none">
-                            <img data-src="holder.js/300x200" id="edit-croppie-view" class="rounded mx-auto d-block">
+                            <img data-src="holder.js/300x200" id="edit-croppie-display" class="rounded mx-auto d-block">
                         </div>
                     </div>
                 </div>
@@ -356,7 +356,14 @@
                     </div>
                 </div>
                 <div class="tab-pane pt-2" id="navtab-tab7">
-
+                    <div class="form-group row">
+                        <div class="mx-auto filepond-circle">
+                            <input type="file" class="filepond" name="edit-filepond-circle" id="edit-filepond-circle" accept="image/png,image/jpeg" data-max-file-size="3MB">
+                        </div>
+                    </div>
+                    <div class="mx-auto">
+                        <input type="file" class="filepond" name="edit-filepond" id="edit-filepond">
+                    </div>
                 </div>
                 <div class="tab-pane pt-2" id="navtab-tab8">
                     <div class="form-group row">

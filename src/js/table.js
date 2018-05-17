@@ -28,6 +28,8 @@ import "holderjs";
 import "@fancyapps/fancybox";
 import tinymce from "tinymce/tinymce";
 import "tinymce/themes/modern/theme";
+import FilePond from "../plugins/filepond.js";
+import "filepond/dist/filepond.min.css";
 /**
  * script
  */
@@ -205,21 +207,18 @@ $("#edit-summernote").summernote({
   dialogsInBody: true
 });
 
-let edit_croppie = new Croppie(
-  document.getElementById("edit-croppie-display"),
-  {
-    enableExif: true,
-    viewport: {
-      width: 300,
-      height: 200,
-      type: "square"
-    },
-    boundary: {
-      width: 400,
-      height: 400
-    }
+let edit_croppie = new Croppie($("#edit-croppie-preview").get(0), {
+  enableExif: true,
+  viewport: {
+    width: 300,
+    height: 200,
+    type: "square"
+  },
+  boundary: {
+    width: 400,
+    height: 400
   }
-);
+});
 
 $("#edit-croppie").on("change", function(event) {
   if (event.target.files.length == 0) {
@@ -239,11 +238,11 @@ $("#edit-croppie").on("change", function(event) {
       url: ev.target.result
     });
 
-    $("#edit-croppie-display")
+    $("#edit-croppie-preview")
       .parent(".col-sm-12")
       .removeClass("d-none");
 
-    $("#edit-croppie-view")
+    $("#edit-croppie-display")
       .parent(".col-sm-12")
       .addClass("d-none");
   };
@@ -260,16 +259,16 @@ $("#edit-croppie-clip").on("click", function() {
     let reader = new FileReader();
 
     reader.onload = function(ev) {
-      $("#edit-croppie-view").prop("src", ev.target.result);
+      $("#edit-croppie-display").prop("src", ev.target.result);
     };
 
     reader.readAsDataURL(blob);
 
-    $("#edit-croppie-display")
+    $("#edit-croppie-preview")
       .parent(".col-sm-12")
       .addClass("d-none");
 
-    $("#edit-croppie-view")
+    $("#edit-croppie-display")
       .parent(".col-sm-12")
       .removeClass("d-none");
   });
@@ -284,4 +283,18 @@ $('[data-fancybox="gallery"]').fancybox({
 tinymce.init({
   selector: "#edit-tinymce",
   skin: false
+});
+
+FilePond.create($("#edit-filepond-circle").get(0), {
+  labelIdle: `Drag & Drop your picture or <span class="filepond--label-action">Browse</span>`,
+  imagePreviewHeight: 170,
+  imageCropAspectRatio: "1:1",
+  imageResizeTargetWidth: 200,
+  imageResizeTargetHeight: 200
+});
+
+FilePond.create($("#edit-filepond").get(0), {
+  maxFiles: 10,
+  maxFileSize: "3MB",
+  allowMultiple: true
 });
