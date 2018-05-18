@@ -11,75 +11,11 @@ import "../scss/table.scss";
 import $ from "jquery";
 import "popper.js";
 import "bootstrap";
-import "jquery-mousewheel";
-import "../plugins/datatables.js";
-import { select2, select2_lang } from "../plugins/select2.js";
-import flatpickr from "flatpickr";
-import { Mandarin } from "flatpickr/dist/l10n/zh.js";
-import rangePlugin from "flatpickr/dist/plugins/rangePlugin.js";
-import froala from "froala-editor";
-import "../plugins/froala-editor.js";
-import ckeditor5 from "@ckeditor/ckeditor5-build-classic";
-import "codemirror";
-import "summernote/dist/summernote-bs4.min.js";
-import "croppie/croppie.js";
 import swal from "sweetalert2";
 import "holderjs";
-import "@fancyapps/fancybox";
-import tinymce from "tinymce/tinymce";
-import "tinymce/themes/modern/theme";
-import FilePond from "../plugins/filepond.js";
-import "filepond/dist/filepond.min.css";
 /**
  * script
  */
-$.fn.dataTableExt.oStdClasses.sWrapper = "dataTables_wrapper dt-bootstrap4";
-$.fn.dataTableExt.oStdClasses.sPageButton = "page-item";
-
-var table = $("table").DataTable({
-  dom: `
-        <'row'<'col-md-12'tr>>
-        <'navbar px-0'<i><p>>
-    `,
-  renderer: "bootstrap",
-  displayLength: 10,
-  lengthMenu: [[1, 10, 25, 50, 100], [1, 10, 25, 50, 100]],
-  pagingType: "simple_numbers",
-  language: {
-    lengthMenu: "_MENU_",
-    processing: "loading",
-    paginate: {
-      first: "&laquo;",
-      previous: "&lsaquo;",
-      next: "&rsaquo;",
-      last: "&raquo;"
-    },
-    search: "",
-    searchPlaceholder: "Search..."
-  },
-  select: {
-    style: "os",
-    className: "bg-dark text-white"
-  },
-  colReorder: true,
-  scrollX: true,
-  scrollY: "calc(100vh - 300px)",
-  scrollCollapse: true,
-  order: [[0, "desc"]]
-  //   serverSide: true,
-  //   processing: true,
-  //   ajax: {
-  //     url: "/datatables",
-  //     type: "GET"
-  //   },
-  //   stateSave: false
-});
-
-function tablePageLen(size) {
-  table.page.len(size).draw();
-  $("#tablePageLen").text(size);
-}
-
 function closeAllOffcanvas() {
   $("#offcanvas-menu").removeClass("off-canvas-open");
   $(".off-canvas-right").removeClass("off-canvas-open");
@@ -157,16 +93,70 @@ $("[data-navtabs-scroll]").each(function(index, el) {
   });
 });
 
+// datatable
+import "../plugins/datatables.js";
+
+$.fn.dataTableExt.oStdClasses.sWrapper = "dataTables_wrapper dt-bootstrap4";
+$.fn.dataTableExt.oStdClasses.sPageButton = "page-item";
+
+var table = $("table").DataTable({
+  dom: `
+        <'row'<'col-md-12'tr>>
+        <'navbar px-0'<i><p>>
+    `,
+  renderer: "bootstrap",
+  displayLength: 10,
+  lengthMenu: [[1, 10, 25, 50, 100], [1, 10, 25, 50, 100]],
+  pagingType: "simple_numbers",
+  language: {
+    lengthMenu: "_MENU_",
+    processing: "loading",
+    paginate: {
+      first: "&laquo;",
+      previous: "&lsaquo;",
+      next: "&rsaquo;",
+      last: "&raquo;"
+    },
+    search: "",
+    searchPlaceholder: "Search..."
+  },
+  select: {
+    style: "os",
+    className: "bg-dark text-white"
+  },
+  colReorder: true,
+  scrollX: true,
+  scrollY: "calc(100vh - 300px)",
+  scrollCollapse: true,
+  order: [[0, "desc"]]
+  //   serverSide: true,
+  //   processing: true,
+  //   ajax: {
+  //     url: "/datatables",
+  //     type: "GET"
+  //   },
+  //   stateSave: false
+});
+
+function tablePageLen(size) {
+  table.page.len(size).draw();
+  $("#tablePageLen").text(size);
+}
+
+// jquery-mousewheel
+import "jquery-mousewheel";
+
 $(".scroll-btn, .nav-tabs").mousewheel(function(event) {
   event.preventDefault();
   // console.log(event.deltaX, event.deltaY, event.deltaFactor);
   $(this).scrollLeft($(this).scrollLeft() - event.deltaY * 4);
 });
 
-// ckeditor
-// CKEDITOR.replace("edit-content");
-
 // flatpickr
+import flatpickr from "flatpickr";
+import { Mandarin } from "flatpickr/dist/l10n/zh.js";
+import rangePlugin from "flatpickr/dist/plugins/rangePlugin.js";
+
 flatpickr("#add-birthday, #edit-birthday", {
   locale: Mandarin,
   time_24hr: true,
@@ -175,6 +165,8 @@ flatpickr("#add-birthday, #edit-birthday", {
 $("#add-birthday, #edit-birthday").css({ backgroundColor: "#fff" });
 
 // select2
+import { select2, select2_lang } from "../plugins/select2.js";
+
 $("#add-tags, #edit-tags").select2({
   language: select2_lang,
   theme: "bootstrap",
@@ -184,6 +176,9 @@ $("#add-tags, #edit-tags").select2({
   containerCssClass: ":all:"
 });
 
+// froala-editor
+import froala from "froala-editor";
+import "../plugins/froala-editor.js";
 $("#edit-froalaeditor").froalaEditor({
   language: "zh_tw",
   fileUploadURL: "/file/upload",
@@ -194,6 +189,9 @@ $("#edit-froalaeditor").froalaEditor({
   iconsTemplate: "font_awesome_5"
 });
 
+// ckeditor
+import ckeditor5 from "@ckeditor/ckeditor5-build-classic";
+
 ckeditor5
   .create(document.querySelector("#edit-ckeditor5"), {})
   .then(editor => {
@@ -203,9 +201,16 @@ ckeditor5
     // console.error(err.stack);
   });
 
+// summernote
+import "codemirror";
+import "summernote/dist/summernote-bs4.min.js";
+
 $("#edit-summernote").summernote({
   dialogsInBody: true
 });
+
+// croppie
+import "croppie/croppie.js";
 
 let edit_croppie = new Croppie($("#edit-croppie-preview").get(0), {
   enableExif: true,
@@ -230,9 +235,9 @@ $("#edit-croppie").on("change", function(event) {
   let reader = new FileReader();
 
   reader.onload = function(ev) {
-    // if(!files[0].type.match('image.*')){
-    //   return;
-    // }
+    if (!files[0].type.match("image.*")) {
+      return;
+    }
 
     edit_croppie.bind({
       url: ev.target.result
@@ -274,16 +279,25 @@ $("#edit-croppie-clip").on("click", function() {
   });
 });
 
+// fancybox
+import "@fancyapps/fancybox";
+
 $('[data-fancybox="gallery"]').fancybox({
   thumbs: {
     autoStart: true
   }
 });
 
+// tinymce
+import tinymce from "../plugins/tinymce.js";
+
 tinymce.init({
   selector: "#edit-tinymce",
   skin: false
 });
+
+// filepond
+import FilePond from "../plugins/filepond.js";
 
 FilePond.create($("#edit-filepond-circle").get(0), {
   labelIdle: `Drag & Drop your picture or <span class="filepond--label-action">Browse</span>`,
@@ -298,3 +312,16 @@ FilePond.create($("#edit-filepond").get(0), {
   maxFileSize: "3MB",
   allowMultiple: true
 });
+
+// uppy
+import Uppy from "uppy/lib/core";
+import Dashboard from "uppy/lib/plugins/Dashboard";
+import Tus from "uppy/lib/plugins/Tus";
+
+Uppy({ autoProceed: false })
+  .use(Dashboard, { trigger: "#edit-uppy" })
+  .use(Tus, { endpoint: "upload-file-url" })
+  .run()
+  .on("complete", result => {
+    console.log("Upload result:", result);
+  });
