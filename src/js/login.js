@@ -15,7 +15,6 @@ import { Vue } from "../plugins/vue";
 /**
  * script
  */
-
 new Vue({
   el: "#app",
   data: {

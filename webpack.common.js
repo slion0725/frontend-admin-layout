@@ -18,6 +18,7 @@ module.exports = {
     register: "./src/js/register",
     login: "./src/js/login",
     table: "./src/js/table",
+    dashboard: "./src/js/dashboard",
     password_reset: "./src/js/password_reset",
     password_sendlink: "./src/js/password_sendlink"
   },
@@ -117,6 +118,11 @@ module.exports = {
       chunks: ["vendor", "table"],
       filename: "table.html",
       template: "src/html/table.html"
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ["vendor", "dashboard"],
+      filename: "dashboard.html",
+      template: "src/html/dashboard.html"
     }),
     new HtmlWebpackPlugin({
       chunks: ["vendor", "password_reset"],

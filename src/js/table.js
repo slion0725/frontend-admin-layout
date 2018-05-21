@@ -11,48 +11,27 @@ import "../scss/table.scss";
 import $ from "jquery";
 import "popper.js";
 import "bootstrap";
+import { Vue } from "../plugins/vue";
 import swal from "sweetalert2";
 import "holderjs";
 /**
  * script
  */
-function closeAllOffcanvas() {
-  $("#offcanvas-menu").removeClass("off-canvas-open");
-  $(".off-canvas-right").removeClass("off-canvas-open");
-}
-
-$("#offcanvas-menu-btn").on("click", function() {
-  closeAllOffcanvas();
-  $("#offcanvas-menu").toggleClass("off-canvas-open");
+// vue
+new Vue({
+  el: "#app",
+  data: {
+    search: {},
+    datatables: {}
+  }
 });
 
-$("#offcanvas-profile-btn").on("click", function() {
-  closeAllOffcanvas();
-  $("#offcanvas-profile").toggleClass("off-canvas-open");
-});
-
-$("#offcanvas-search-btn").on("click", function() {
-  closeAllOffcanvas();
-  $("#offcanvas-search").toggleClass("off-canvas-open");
-});
-
-$("#offcanvas-show-btn").on("click", function() {
-  closeAllOffcanvas();
-  $("#offcanvas-show").toggleClass("off-canvas-open");
-});
-
-$("#offcanvas-add-btn").on("click", function() {
-  closeAllOffcanvas();
-  $("#offcanvas-add").toggleClass("off-canvas-open");
-});
-
-$("#offcanvas-edit-btn").on("click", function() {
-  closeAllOffcanvas();
-  $("#offcanvas-edit").toggleClass("off-canvas-open");
-});
+// layout
+import layout from "./components/layout";
+layout();
 
 $("#del-btn").on("click", function() {
-  closeAllOffcanvas();
+  $(".off-canvas").removeClass("off-canvas-open");
   swal({
     title: "Are you sure?",
     text: "You won't be able to revert this!",
@@ -66,10 +45,6 @@ $("#del-btn").on("click", function() {
       swal("Deleted!", "Your file has been deleted.", "success");
     }
   });
-});
-
-$(".btn-offcanvas-close").on("click", function() {
-  closeAllOffcanvas();
 });
 
 $("[data-navtabs-scroll]").each(function(index, el) {
@@ -94,49 +69,8 @@ $("[data-navtabs-scroll]").each(function(index, el) {
 });
 
 // datatable
-import "../plugins/datatables.js";
-
-$.fn.dataTableExt.oStdClasses.sWrapper = "dataTables_wrapper dt-bootstrap4";
-$.fn.dataTableExt.oStdClasses.sPageButton = "page-item";
-
-var table = $("table").DataTable({
-  dom: `
-        <'row'<'col-md-12'tr>>
-        <'navbar px-0'<i><p>>
-    `,
-  renderer: "bootstrap",
-  displayLength: 10,
-  lengthMenu: [[1, 10, 25, 50, 100], [1, 10, 25, 50, 100]],
-  pagingType: "simple_numbers",
-  language: {
-    lengthMenu: "_MENU_",
-    processing: "loading",
-    paginate: {
-      first: "&laquo;",
-      previous: "&lsaquo;",
-      next: "&rsaquo;",
-      last: "&raquo;"
-    },
-    search: "",
-    searchPlaceholder: "Search..."
-  },
-  select: {
-    style: "os",
-    className: "bg-dark text-white"
-  },
-  colReorder: true,
-  scrollX: true,
-  scrollY: "calc(100vh - 300px)",
-  scrollCollapse: true,
-  order: [[0, "desc"]]
-  //   serverSide: true,
-  //   processing: true,
-  //   ajax: {
-  //     url: "/datatables",
-  //     type: "GET"
-  //   },
-  //   stateSave: false
-});
+import { datatables_config } from "../plugins/datatables.js";
+var table = $("table").DataTable(datatables_config);
 
 function tablePageLen(size) {
   table.page.len(size).draw();

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    ${require('./components/head.html')}
+    <!-- style -->
+</head>
+
+<body>
+    <div id="app">
+        <!-- nav -->
+        ${require('./components/nav.html')}
+        <!-- off-canvas-left + menu -->
+        ${require('./components/menu.html')}
+        <!-- off-canvas-right + profile + search + show + add + edit -->
+        <div>
+            <!-- profile -->
+            ${require('./components/profile.html')}
+        </div>
+        <!-- container -->
+        <div class="container-fluid">
+            <!-- breadcrumb -->
+            ${require('./components/breadcrumb.html')}
+        </div>
+        <!-- loading -->
+        ${require('./components/loading.html')}
+        <!-- footer -->
+        ${require('./components/footer.html')}
+    </div>
+    <!-- script -->
+</body>
+
+</html>

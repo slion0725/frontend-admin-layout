@@ -11,12 +11,3 @@ import "../scss/index.scss";
 import $ from "jquery";
 import "popper.js";
 import "bootstrap";
-import { Vue } from "../plugins/vue";
-/**
- * script
- */
-
-new Vue({
-  el: "#app",
-  methods: {}
-});
