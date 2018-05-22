@@ -11,6 +11,7 @@ import "../scss/login.scss";
 import $ from "jquery";
 import "popper.js";
 import "bootstrap";
+import "holderjs";
 import { Vue } from "../plugins/vue";
 /**
  * script
