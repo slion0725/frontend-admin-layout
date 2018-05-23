@@ -95,10 +95,10 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(["dist"]),
     extractScss,
-    new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-    }),
+    // new webpack.ProvidePlugin({
+    //   $: "jquery",
+    //   jQuery: "jquery",
+    // }),
     new HtmlWebpackPlugin({
       chunks: ["vendor", "index"],
       filename: "index.html",

@@ -9,11 +9,7 @@ import "../scss/table.scss";
  * plugin
  */
 import $ from "jquery";
-import "popper.js";
-import "bootstrap";
-import "holderjs";
 import { Vue } from "../plugins/vue";
-import swal from "sweetalert2";
 /**
  * script
  */
@@ -30,6 +26,8 @@ new Vue({
 import layout from "./components/layout";
 layout();
 
+// sweetalert2
+import swal from "sweetalert2";
 $("#del-btn").on("click", function() {
   $(".off-canvas").removeClass("off-canvas-open");
   swal({
@@ -47,27 +45,6 @@ $("#del-btn").on("click", function() {
   });
 });
 
-$("[data-navtabs-scroll]").each(function(index, el) {
-  // <a class="px-1 py-2 float-right mdi mdi-chevron-right" data-navtabs-scroll="300" href="#"></a>
-  // <a class="px-1 py-2 float-left mdi mdi-chevron-left" data-navtabs-scroll="-300" href="#"></a>
-  let scrollY = $(el).data("navtabs-scroll");
-
-  $(el).on("click", function() {
-    $(this)
-      .siblings(".nav-tabs")
-      .stop(true, true)
-      .animate(
-        {
-          scrollLeft:
-            $(this)
-              .siblings(".nav-tabs")
-              .scrollLeft() + scrollY
-        },
-        "slow"
-      );
-  });
-});
-
 // datatable
 import { datatables_config } from "../plugins/datatables.js";
 var table = $("table").DataTable(datatables_config);
@@ -77,20 +54,10 @@ function tablePageLen(size) {
   $("#tablePageLen").text(size);
 }
 
-// jquery-mousewheel
-import "jquery-mousewheel";
-
-$(".scroll-btn, .nav-tabs").mousewheel(function(event) {
-  event.preventDefault();
-  // console.log(event.deltaX, event.deltaY, event.deltaFactor);
-  $(this).scrollLeft($(this).scrollLeft() - event.deltaY * 4);
-});
-
 // flatpickr
 import flatpickr from "flatpickr";
 import { Mandarin } from "flatpickr/dist/l10n/zh.js";
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin.js";
-
 flatpickr("#add-birthday, #edit-birthday", {
   locale: Mandarin,
   time_24hr: true,
@@ -100,7 +67,6 @@ $("#add-birthday, #edit-birthday").css({ backgroundColor: "#fff" });
 
 // select2
 import { select2, select2_lang } from "../plugins/select2.js";
-
 $("#add-tags, #edit-tags").select2({
   language: select2_lang,
   theme: "bootstrap",
@@ -125,7 +91,6 @@ $("#edit-froalaeditor").froalaEditor({
 
 // ckeditor
 import ckeditor5 from "@ckeditor/ckeditor5-build-classic";
-
 ckeditor5
   .create(document.querySelector("#edit-ckeditor5"), {})
   .then(editor => {
@@ -214,8 +179,8 @@ $("#edit-croppie-clip").on("click", function() {
 });
 
 // fancybox
-import "@fancyapps/fancybox";
-
+window.$ = window.jQuery = $;
+const fancybox = require("@fancyapps/fancybox");
 $('[data-fancybox="gallery"]').fancybox({
   thumbs: {
     autoStart: true
