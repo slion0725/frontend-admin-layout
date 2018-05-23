@@ -12,7 +12,7 @@ import $ from "jquery";
 import "popper.js";
 import "bootstrap";
 import "holderjs";
-import { Vue } from "../plugins/vue";
+import Vue from "../plugins/vue";
 /**
  * script
  */
@@ -26,5 +26,6 @@ new Vue({
 });
 
 // layout
-import layout from "./components/layout";
-layout();
+import { offCanvas, navtabsScroll } from "./components/layout";
+offCanvas();
+navtabsScroll();

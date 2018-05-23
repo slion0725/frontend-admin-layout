@@ -9,7 +9,10 @@ import "../scss/table.scss";
  * plugin
  */
 import $ from "jquery";
-import { Vue } from "../plugins/vue";
+import "popper.js";
+import "bootstrap";
+import "holderjs";
+import Vue from "../plugins/vue";
 /**
  * script
  */
@@ -23,8 +26,9 @@ new Vue({
 });
 
 // layout
-import layout from "./components/layout";
-layout();
+import { offCanvas, navtabsScroll } from "./components/layout";
+offCanvas();
+navtabsScroll();
 
 // sweetalert2
 import swal from "sweetalert2";
@@ -46,8 +50,8 @@ $("#del-btn").on("click", function() {
 });
 
 // datatable
-import { datatables_config } from "../plugins/datatables.js";
-var table = $("table").DataTable(datatables_config);
+import { datatablesConfig } from "../plugins/datatables.js";
+var table = $("table").DataTable(datatablesConfig);
 
 function tablePageLen(size) {
   table.page.len(size).draw();

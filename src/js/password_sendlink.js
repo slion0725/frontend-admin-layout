@@ -11,7 +11,7 @@ import "../scss/password_sendlink.scss";
 import $ from "jquery";
 import "popper.js";
 import "bootstrap";
-import { Vue } from "../plugins/vue";
+import Vue from "../plugins/vue";
 /**
  * script
  */

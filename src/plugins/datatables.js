@@ -7,7 +7,7 @@ import "datatables.net-select";
 $.fn.dataTableExt.oStdClasses.sWrapper = "dataTables_wrapper dt-bootstrap4";
 $.fn.dataTableExt.oStdClasses.sPageButton = "page-item";
 
-const datatables_config = {
+const datatablesConfig = {
   dom: `
     <'row'<'col-md-12'tr>>
     <'navbar px-0'<i><p>>
@@ -46,4 +46,4 @@ const datatables_config = {
   //   stateSave: false
 };
 
-export { datatables_config };
+export { datatablesConfig };

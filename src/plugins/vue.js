@@ -6,4 +6,4 @@ import VeeValidate, { Validator } from "vee-validate";
 
 Vue.use(VeeValidate);
 
-export { Vue };
+export default Vue;
